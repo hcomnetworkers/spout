@@ -114,6 +114,7 @@ EOD;
         $worksheet->setFilePointer($sheetFilePointer);
 
         \fwrite($sheetFilePointer, self::SHEET_XML_FILE_HEADER);
+        \Octaved\Spreadsheet\Writer\ForkedStaticHooks::onXlsxPreSheetData($sheetFilePointer);
         \fwrite($sheetFilePointer, '<sheetData>');
     }
 
